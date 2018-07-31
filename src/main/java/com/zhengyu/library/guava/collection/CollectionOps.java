@@ -51,7 +51,6 @@ public class CollectionOps {
         System.out.println(immutableBiMap);
         System.out.println(inverseImmutableBiMap);
 
-
         /** ImmutableTable */
         ImmutableTable<Integer, String, String> immutableTable = ImmutableTable.<Integer, String, String>builder()
                 .put(17, "child", "2")
