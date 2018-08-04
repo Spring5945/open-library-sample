@@ -26,18 +26,16 @@ public class StringOps {
 
     public static void main(String[] args) {
         /** joiner */
-        String skipNullsString = skipNullsJoiner.join(Lists.newArrayList("a", null, "b"));
-        String useForNullString = useForNullJoiner.join(Lists.newArrayList("a", null, "b"));
-        System.out.println(skipNullsString);
-        System.out.println(useForNullString);
+        joiner();
 
         /** splitter */
-        List<String> fixedlengthSplitterList = fixedLengthSplitter.splitToList("aaa,b,c,,,f");
-        List<String> limitSplitterList = limitSplitter.splitToList("aaa,b,c,,,f");
-        System.out.println(fixedlengthSplitterList.get(0));
-        limitSplitterList.forEach(item -> System.out.println(item));
+        splityter();
 
         /** CharMatcher */
+        charMatcher();
+    }
+
+    private static void charMatcher() {
         System.out.println(inRangeCharMatcher.retainFrom("bcfz"));
         System.out.println(isNotCharMatcher.retainFrom("bcfz"));
         System.out.println(CharMatcher.ascii().retainFrom("bcf12321z^&^&$&d"));
@@ -45,6 +43,20 @@ public class StringOps {
         CharMatcher complexMatcher = isNotCharMatcher.and(inRangeCharMatcher);
         System.out.println(complexMatcher.retainFrom("asdfsafdsaffccdfc"));
         System.out.println(predicateCharMatcher.retainFrom("asdfsafdsaffccdfc"));
+    }
+
+    private static void splityter() {
+        List<String> fixedlengthSplitterList = fixedLengthSplitter.splitToList("aaa,b,c,,,f");
+        List<String> limitSplitterList = limitSplitter.splitToList("aaa,b,c,,,f");
+        System.out.println(fixedlengthSplitterList.get(0));
+        limitSplitterList.forEach(item -> System.out.println(item));
+    }
+
+    private static void joiner() {
+        String skipNullsString = skipNullsJoiner.join(Lists.newArrayList("a", null, "b"));
+        String useForNullString = useForNullJoiner.join(Lists.newArrayList("a", null, "b"));
+        System.out.println(skipNullsString);
+        System.out.println(useForNullString);
     }
 
 

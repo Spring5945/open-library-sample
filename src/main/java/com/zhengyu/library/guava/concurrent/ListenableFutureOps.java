@@ -15,7 +15,7 @@ public class ListenableFutureOps {
     private static final AtomicInteger threadNumber = new AtomicInteger(1);
     private static ExecutorService executorService = null;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         /** Thread Pool */
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(5, 10,
                 0L, TimeUnit.MILLISECONDS,
